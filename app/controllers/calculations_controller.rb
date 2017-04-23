@@ -16,11 +16,11 @@ class CalculationsController < ApplicationController
 
   def flex_payment
 
-    @the_number = params["number"].to_f
+    @basis_points = params["basis_points"].to_f
 
-    @the_number = params["number"].to_f
+    @number_of_years = params["number_of_years"].to_f
 
-    @the_number = params["number"].to_f
+    @present_value = params["present_value"].to_f
 
     render("calculations/flexible_payment_5.5.5.html.erb")
   end
@@ -29,13 +29,22 @@ class CalculationsController < ApplicationController
     render("calculations/square_form.html.erb")
   end
 
-def square_results
+  def square_results
 
-  @the_number = params[:user_number].to_f
+    @the_number = params[:user_number].to_f
 
-  render("calculations/square_results.html.erb")
+    render("calculations/square_results.html.erb")
 
-end
+  end
 
+  def flex_random
+
+    @min = params["min"].to_f
+
+    @max = params["max"].to_f
+
+    render("calculations/flexible_random_5.5.html.erb")
+
+  end
 
 end
