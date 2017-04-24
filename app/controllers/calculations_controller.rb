@@ -65,11 +65,11 @@ class CalculationsController < ApplicationController
 
   def payment_results
 
-    @basis_points = params["basis_points"].to_f
+    @basis_points = params[:user_number].to_f
 
-    @number_of_years = params["number_of_years"].to_f
+    @number_of_years = params[:user_number].to_f
 
-    @present_value = params["present_value"].to_f
+    @present_value = params[:user_number].to_f
 
     render("calculations/payment_results.html.erb")
 
@@ -81,9 +81,9 @@ class CalculationsController < ApplicationController
 
   def random_results
 
-    @min = params["min"].to_f
+    @min = params[:user_number].to_f
 
-    @max = params["max"].to_f
+    @max = params[:user_number].to_f
 
     render("calculations/random_results.html.erb")
   end
