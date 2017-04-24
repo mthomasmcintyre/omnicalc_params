@@ -47,4 +47,48 @@ class CalculationsController < ApplicationController
 
   end
 
+  def square_root_form
+    render("calculations/square_root_form.html.erb")
+  end
+
+  def square_root_results
+
+    @the_number = params[:user_number].to_f
+
+    render("calculations/square_root_results.html.erb")
+
+  end
+
+  def payment_form
+    render("calculations/payment_form.html.erb")
+  end
+
+  def payment_results
+
+    @basis_points = params["basis_points"].to_f
+
+    @number_of_years = params["number_of_years"].to_f
+
+    @present_value = params["present_value"].to_f
+
+    render("calculations/payment_results.html.erb")
+
+  end
+
+  def random_form
+    render("calculations/random_form.html.erb")
+  end
+
+  def random_results
+
+    @min = params["min"].to_f
+
+    @max = params["max"].to_f
+
+    render("calculations/random_results.html.erb")
+  end
+
+
+
+
 end
