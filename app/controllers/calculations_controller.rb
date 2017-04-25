@@ -65,11 +65,11 @@ class CalculationsController < ApplicationController
 
   def payment_results
 
-    @basis_points = params[:user_basis].to_f
+    @basis_points = params[:basis_points].to_f
 
-    @number_of_years = params[:user_years].to_f
+    @number_of_years = params[:number_of_years].to_f
 
-    @present_value = params[:user_pv].to_f
+    @present_value = params[:present_value].to_f
 
     render("calculations/payment_results.html.erb")
 
