@@ -1,5 +1,5 @@
 <h1>Payment Results
 </h1>
 
-<p>A <%= @number_of_years.round %> year loan of <%= number_to_currency(@present_value, precision: 0) %>, with an annual interest rate of <%= number_to_percentage(@basis_points/100,precision: 2) %>, requires a monthly payment of <%= number_to_currency(((@basis_points/(10000*12)) * @present_value)/(1-((1+(@basis_points/(10000*12)))**(-1*(@number_of_years*12)))), precision: 2) %>
+<p>A <%= @number_of_years.round %> year loan of <%= number_to_currency(@present_value, precision: 0) %>, with an annual interest rate of <%= number_to_percentage(@basis_points/100,precision: 4) %>, requires a monthly payment of <%= number_to_currency(((@basis_points/(10000*12)) * @present_value)/(1-((1+(@basis_points/(10000*12)))**(-1*(@number_of_years*12)))), precision: 2) %>
 </p>
